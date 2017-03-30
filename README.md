@@ -20,7 +20,7 @@ The `Outline` object represents a full SVG path outline (which may consist of ne
 
 - `getShapes` - Gets all shapes defined in the path that the outline was built on.
 - `getShape(idx)` - This gets a specific subpath in an outline. For obvious reasons, `idx` starts at 0.
-- `toSVG()` - Serialize this outline to an SVG path. This will yield a path with *absolute* coordinates, but is for all intents and purposes idempotent: pushing in a path should yield an identically rendered path through `.toSVG()` 
+- `toSVG()` - Serialize this outline to an SVG path. This will yield a path with *absolute* coordinates, but is for all intents and purposes idempotent: pushing in a path should yield an identically rendered path through `.toSVG()`
 
 and the following API that most of the time you shouldn't care about but sometimes you will:
 
@@ -50,7 +50,7 @@ This is the main factory object and has very little in the way of its own API:
 - `getReceiver()` - returns the outline recorder passed into the constructor.
 - `parse(path, [xoffset, yoffset])` - parses an SVG path, with an optional (xoffset/yoffset) offset to translate the entire path uniformly.
 
-## an example:
+## An example:
 
 Let's ingest an SVG's path, and then generate the SVG code that shows you where all the vectices and control points are:
 
@@ -82,5 +82,9 @@ outline.getShapes().forEach(shape => {
 });
 
 const svg2 = find("svg g")[1];
-svg2.innerHTML = vertices.join('\n'); 
+svg2.innerHTML = vertices.join('\n');
 ```
+
+## Live demo?
+
+Yeah alright: https://pomax.github.com/js-svg-path, and obviously to see *why* it works, view-source that.
