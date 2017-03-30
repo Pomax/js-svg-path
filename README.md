@@ -18,7 +18,7 @@ You'll want this 99.99% of the time. This function ingests an SVG path string, a
 
 The `Outline` object represents a full SVG path outline (which may consist of nested subpats). It is constructed as `new library.Outline()` and has the following API:
 
-- `getShapes` - Gets all shapes defined in the path that the outline was built on.
+- `getShapes()` - Gets all shapes defined in the path that the outline was built on.
 - `getShape(idx)` - This gets a specific subpath in an outline. For obvious reasons, `idx` starts at 0.
 - `toSVG()` - Serialize this outline to an SVG path. This will yield a path with *absolute* coordinates, but is for all intents and purposes idempotent: pushing in a path should yield an identically rendered path through `.toSVG()`
 
@@ -66,14 +66,12 @@ parser.parse(d);
 const vertices = [`<path d="${d}"/>`];
 outline.getShapes().forEach(shape => {
   shape.points.forEach(p => {
-    let m = p.main;
-    if (p.left) {
-      let l = p.left;
+    let m = p.main, l = p.left, r = p.right;
+    if (l) {
       vertices.push(`<path d="M${l.x} ${l.y} L${m.x} ${m.y}" stroke="red"/>`)
       vertices.push(`<circle cx="${l.x}" cy="${l.y}" r="1" fill="red" stroke="none"/>`)
     }
-    if (p.right) {
-      let r = p.right;
+    if (r) {
       vertices.push(`<path d="M${r.x} ${r.y} L${m.x} ${m.y}" stroke="green"/>`)
       vertices.push(`<circle cx="${r.x}" cy="${r.y}" r="1" fill="green" stroke="none"/>`)
     }
