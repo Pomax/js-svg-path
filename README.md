@@ -6,7 +6,23 @@ A parser that turns SVG path strings into a JS object you can mess with. Basical
 
 `npm install js-svg-path`, with optional `--save` or `--save-dev` if you need it saved in your package.json file.
 
-## Using this things
+## Using this thing
+
+Use in Node.js as:
+
+```
+var library = require('js-svg-path');
+```
+
+Or use in the browser as:
+```
+<!-- this gives you window.PathConverter to work with after loading: -->
+<script src="js-svg-path/library.js"></script>
+```
+
+Easy-peasy.
+
+## The API(s)
 
 There are three objects, and one utility function, exposed in this API.
 
