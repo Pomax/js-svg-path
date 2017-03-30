@@ -1,6 +1,6 @@
 {
   "name": "js-svg-path",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "",
   "main": "library.js",
   "scripts": {
@@ -8,15 +8,19 @@
     "build": "rollup index.js --format umd --name PathConverter > library.js"
   },
   "engine": {
-    "node": "^7.x.x"
+    "node": "^4.x.x"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Pomax/js-svg-path.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "svg",
+    "path",
+    "javascript"
+  ],
+  "author": "Pomax",
+  "license": "Public Domain",
   "bugs": {
     "url": "https://github.com/Pomax/js-svg-path/issues"
   },
