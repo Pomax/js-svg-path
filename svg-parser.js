@@ -82,9 +82,6 @@ class SVGParser {
 
 					// make start point bezier if it differs from the control point
 					if(x !=cx1 || y !=cy1) {
-						if (receiver.current.current().isPlain()) {
-							receiver.addPoint(x,y);
-						}
 						receiver.setRightControl(cx1, cy1);
 					}
 
@@ -112,9 +109,6 @@ class SVGParser {
 
 					// make start point bezier if it differs from the control point
 					if(x!=cx1 || y !=cy1) {
-						if (receiver.current.current().isPlain()) {
-							receiver.addPoint(x,y);
-						}
 						receiver.setRightControl(cx1, cy1);
 					}
 
