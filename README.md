@@ -87,4 +87,4 @@ svg2.innerHTML = vertices.join('\n');
 
 ## Live demo?
 
-Yeah alright: https://pomax.github.com/js-svg-path, and obviously to see *why* it works, view-source that.
+Yeah alright: https://pomax.github.io/js-svg-path, and obviously to see *why* it works, view-source that.
