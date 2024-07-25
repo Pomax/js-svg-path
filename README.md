@@ -70,7 +70,7 @@ This is the main factory object and has very little in the way of its own API:
 
 Let's ingest an SVG's path, and then generate the SVG code that shows you where all the vectices and control points are:
 
-```
+```js
 const path1 = find("svg path")[0];
 const path2 = find("svg path")[1];
 const d = path1.get("d");
